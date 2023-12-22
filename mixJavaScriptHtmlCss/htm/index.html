@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>THE CALCULATOR</title>
+        <style>
+            body {
+                text-align: center;
+                background-image: url("annie-spratt-wuc-KEIBrdE-unsplash.jpg");
+            }
+            h1 {
+                margin: 0;
+                padding: 20px;
+            }
+            .button{
+                transition-duration: 0.4s;
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            }
+            .button:hover{
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+                background-color: red;
+                color: white
+            }
+            .h1{
+                background-color: white;
+                color: red;
+            }
+
+          .element {
+            border-color: limegreen;
+            font-family: Arial;
+            border-style: solid;
+            border-image-outset: 15px;
+            display: inline-flex;
+            padding: 11px 35px;
+            font-size: 17px;
+            text-decoration: whitesmoke;
+            cursor: pointer;
+            border-radius: 250px;
+          }
+        </style>
+      
+    </head>
+    <body >
+        <h1 id = "myHeading" class = "element button h1">
+        ||||||||||||||||| CALCULATOR |||||||||||||||||
+        </h1>
+        <br>
+        <br>
+        <input type = "text" id = "x" placeholder = "Enter the number" class = "element button">
+        <br>
+        <br>
+        <input type = "text" id = "y" placeholder = "Enter the number" class = "element button">
+        <br>
+        <br>
+        <input type = "text" id = "operator" placeholder = "Enter the operator" class = "element button">
+        <br>
+        <br>
+        <button onclick = "calculate()" id ="ca" class = "element button">Calculate</button>
+        <br>
+        <br>
+        <output for = "Result" id = "result" class = "element button h1">Result:</output>
+        <script>
+
+          
+            let calculate= () =>{
+                let x = parseFloat(document.getElementById("x").value);
+                let y = parseFloat(document.getElementById("y").value);
+                let op = (document.getElementById("operator").value);
+                let result;
+                switch(op){
+                    case '+':
+                         result = x + y;
+                         break;
+                    case '-':
+                         result = x - y;
+                         break;
+                    case '*':
+                         result = x * y;
+                         break;
+                    case '/':
+                         result = x / y;
+                         break;
+                    case '%':
+                         result = x % y;
+                         break;
+                    default:   
+                          result = "You enter the wrong operator";
+                          break;   
+                }
+                document.getElementById("result").innerText = "Result: " + result;
+            }
+        </script>
+    </body>
+</html>
+

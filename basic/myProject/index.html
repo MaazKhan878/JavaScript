@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>THE CALCULATOR</title>
+        <style>
+            body {
+                text-align: center;
+            }
+            h1 {
+                margin: 0;
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id = "myHeading">
+        ||||||||||||||||| CALCULATOR |||||||||||||||||
+        </h1>
+        <br>
+        <br>
+        <input type = "text" id = "x" placeholder = "Enter the number" >
+        <br>
+        <br>
+        <input type = "text" id = "y" placeholder = "Enter the number">
+        <br>
+        <br>
+        <input type = "text" id = "operator" placeholder = "Enter the operator">
+        <br>
+        <br>
+        <button onclick = "calculate()" id ="ca">Calculate</button>
+        <br>
+        <br>
+        <output for = "Result" id = "result">Result:</output>
+        <script>
+
+            document.body.style.backgroundColor = 'black'
+            document.getElementById("x").style.color = "red"
+            document.getElementById("x").style.backgroundColor = "gold"
+            document.getElementById("x").style.borderBlockColor = "green"
+            document.getElementById("x").style.fontFamily = "JetBrains Mono"
+            document.getElementById("x").style.borderBlockStyle = "groove"
+            document.getElementById("x").style.borderImageOutset = "15px"
+            document.getElementById("x").style.display = "inline-block"
+            document.getElementById("x").style.padding = "10px 20px"
+            document.getElementById("x").style.fontSize= "16px"
+            document.getElementById("x").style.textDecoration = "Underline"
+            document.getElementById("x").style.cursor = "pointer"
+            document.getElementById("x").style.borderRadius = "5px"
+            document.getElementById("x").style.transition = "background-color 0.3s ease"
+
+            document.getElementById("y").style.color = "red"
+            document.getElementById("y").style.backgroundColor = "gold"
+            document.getElementById("y").style.borderBlockColor = "green"
+            document.getElementById("y").style.fontFamily = "JetBrains Mono"
+            document.getElementById("y").style.borderBlockStyle = "groove"
+            document.getElementById("y").style.borderImageOutset = "15px"
+            document.getElementById("y").style.display = "inline-block"
+            document.getElementById("y").style.padding = "10px 20px"
+            document.getElementById("y").style.fontSize= "16px"
+            document.getElementById("y").style.textDecoration = "Underline"
+            document.getElementById("y").style.cursor = "pointer"
+            document.getElementById("y").style.borderRadius = "5px"
+            document.getElementById("y").style.transition = "background-color 0.3s ease"
+
+            document.getElementById("operator").style.color = "red"
+            document.getElementById("operator").style.backgroundColor = "gold"
+            document.getElementById("operator").style.borderBlockColor = "green"
+            document.getElementById("operator").style.fontFamily = "JetBrains Mono"
+            document.getElementById("operator").style.borderBlockStyle = "groove"
+            document.getElementById("operator").style.borderImageOutset = "15px"
+            document.getElementById("operator").style.display = "inline-block"
+            document.getElementById("operator").style.padding = "10px 20px"
+            document.getElementById("operator").style.fontSize= "16px"
+            document.getElementById("operator").style.textDecoration = "Underline"
+            document.getElementById("operator").style.cursor = "pointer"
+            document.getElementById("operator").style.borderRadius = "5px"
+            document.getElementById("operator").style.transition = "background-color 0.3s ease"
+            
+            document.getElementById("ca").style.color = "red"
+            document.getElementById("ca").style.backgroundColor = "gold"
+            document.getElementById("ca").style.borderBlockColor = "green"
+            document.getElementById("ca").style.fontFamily = "JetBrains Mono"
+            document.getElementById("ca").style.borderBlockStyle = "groove"
+            document.getElementById("ca").style.borderImageOutset = "15px"
+            document.getElementById("ca").style.display = "inline-block"
+            document.getElementById("ca").style.padding = "10px 20px"
+            document.getElementById("ca").style.fontSize= "16px"
+            document.getElementById("ca").style.textDecoration = "Underline"
+            document.getElementById("ca").style.cursor = "pointer"
+            document.getElementById("ca").style.borderRadius = "5px"
+            document.getElementById("ca").style.transition = "background-color 0.3s ease"
+
+            document.getElementById("myHeading").style.color = "red"
+            document.getElementById("myHeading").style.backgroundColor = "gold"
+            document.getElementById("myHeading").style.borderBlockColor = "green"
+            document.getElementById("myHeading").style.fontFamily = "JetBrains Mono"
+            document.getElementById("myHeading").style.borderBlockStyle = "groove"
+            document.getElementById("myHeading").style.borderImageOutset = "15px"
+            document.getElementById("myHeading").style.display = "inline-block"
+            document.getElementById("myHeading").style.padding = "10px 20px"
+            document.getElementById("myHeading").style.fontSize= "16px"
+            document.getElementById("myHeading").style.textDecoration = "Underline"
+            document.getElementById("myHeading").style.cursor = "pointer"
+            document.getElementById("myHeading").style.borderRadius = "5px"
+            document.getElementById("myHeading").style.transition = "background-color 0.3s ease"
+            
+            document.getElementById("result").style.color = "red"
+            document.getElementById("result").style.backgroundColor = "gold"
+            document.getElementById("result").style.borderBlockColor = "green"
+            document.getElementById("result").style.fontFamily = "JetBrains Mono"
+            document.getElementById("result").style.borderBlockStyle = "groove"
+            document.getElementById("result").style.borderImageOutset = "15px"
+            document.getElementById("result").style.display = "inline-block"
+            document.getElementById("result").style.padding = "10px 20px"
+            document.getElementById("result").style.fontSize= "16px"
+            document.getElementById("result").style.textDecoration = "Underline"
+            document.getElementById("result").style.cursor = "pointer"
+            document.getElementById("result").style.borderRadius = "5px"
+            document.getElementById("result").style.transition = "background-color 0.3s ease"
+            let calculate= () =>{
+                let x = parseFloat(document.getElementById("x").value);
+                let y = parseFloat(document.getElementById("y").value);
+                let op = (document.getElementById("operator").value);
+                let result;
+                switch(op){
+                    case '+':
+                         result = x + y;
+                         break;
+                    case '-':
+                         result = x - y;
+                         break;
+                    case '*':
+                         result = x * y;
+                         break;
+                    case '/':
+                         result = x / y;
+                         break;
+                    case '%':
+                         result = x % y;
+                         break;
+                    default:   
+                          result = "You enter the wrong operator";
+                          break;   
+                }
+                document.getElementById("result").innerText = "Result: " + result;
+            }
+        </script>
+    </body>
+</html>
+

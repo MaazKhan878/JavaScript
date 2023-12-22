@@ -22,8 +22,8 @@
   <script>
     function Area(){
       // Get the values from the input fields
-      const length = parseFloat(document.getElementById('lengthInput').value);
-      const width = parseFloat(document.getElementById('widthInput').value);
+      const length = parseFloat(document.getElementById("lengthInput").value);
+      const width = parseFloat(document.getElementById("widthInput").value);
 
       // Check if the values are valid numbers
       if (isNaN(length) || isNaN(width)) {
@@ -33,6 +33,7 @@
 
       // Calculate the area
       const area = length * width/2;
+      document.write(area);
 
 
     }

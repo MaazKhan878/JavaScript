@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=5.0">
+    <title>Maaz Html File</title>
+</head>
+<body>
+    <label for = "Length" id="myInputLabel">Enter the lenght of taingle:</label>
+    <input type = "Number" id="InputLength" placeholder ="Enter length">
+    <br>
+    <label for="Width">Enter the width:</label>
+    <input type = "Number" id="inputWidth" placeholder="Enter the width">
+    <br>
+    <button onclick = "Area()" id="button">calculate area</button>
+    <label for ="Area Calculated">The arae as:</label>
+    <output id="outputArea" placeholder="The area as">
+
+    <script>
+        document.getElementById("myInputLabel").style.color = "cyan"
+        document.getElementById("myInputLabel").style.backgroundColor= "gold"
+        document.getElementById("InputLength").style.color = "gold"
+        document.getElementById("InputLength").style.backgroundColor = "green"
+        document.getElementById("InputLength").style.borderColor = "gold"
+        document.getElementById("InputLength").style.borderStyle= "double"
+
+        document.getElementById("button").style.color = "cyan"
+        document.body.style.background ="black"
+        document.body.style.color = "red"
+        let Area = ()=>{
+        let a = parseFloat(document.getElementById("InputLength").value);
+        let b = parseFloat(document.getElementById("inputWidth").value);
+        let area = a * b;
+        document.getElementById("outputArea").value=area;
+        }
+    </script>
+    
+</body>
+</html>
